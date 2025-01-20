@@ -18,5 +18,17 @@ npm install -g typescript //устанавливаем на комп глоба�
 
 npm install --save-dev ts-loader
 
+DEV-сервер:
 npm install -D webpack-dev-server 
+npm start 
+
+npm install --save-dev css-loader
+
+npm install --save-dev style-loader
+
+npm install less less-loader --save-dev
+
+npm install --save-dev mini-css-extract-plugin
+
+npm i -D babel-loader @babel/core @babel/preset-env
 
