@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const EslintWebpackPlugin = require('eslint-webpack-plugin');
 
 
 module.exports = (env) => { // с помошью переменной окружения создаем функцию и передаем конфигурацию для сборки 'development' or 'production'
@@ -16,10 +17,24 @@ module.exports = (env) => { // с помошью переменной окруж
         plugins: [
             new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }),
             new MiniCssExtractPlugin({ filename: '[name].[contenthash].css', }),
+            new EslintWebpackPlugin({
+                extensions: ['js'], // Визначаємо розширення файлів для перевірки
+                fix: true // Вмикаємо автоматичне виправлення помилок
+            })
         ],
 
         module: {
             rules: [
+               {
+                test: /\.js$/, // Відповідає усім .js файлам
+                    exclude: /node_modules/, // Виключає папку node_modules
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'] // Використовує preset-env для транспіляції сучасного JS
+                        }
+                    }
+                },
                 {
                 test: /\.tsx?$/,
                     use: 'ts-loader',

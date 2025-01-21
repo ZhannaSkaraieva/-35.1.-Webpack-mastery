@@ -32,3 +32,14 @@ npm install --save-dev mini-css-extract-plugin
 
 npm i -D babel-loader @babel/core @babel/preset-env
 
+browserslistrc
+Файл .browserslistrc дозволяє нам визначити, для яких браузерів ми хочемо, щоб наш код був оптимізований. Це впливає на транспіляцію Babel та автопрефіксування в PostCSS.
+> 0.25%
+not dead
+Ця конфігурація означає, що ми хочемо підтримувати браузери, які використовуються в більш ніж 0.25% випадків у світі та не позначені як "мертві" (тобто ті, які більше не оновлюються).
+
+npm i -D eslint-webpack-plugin
+Файл .eslintrc містить налаштування ESLint для нашого проєкту. Він визначає правила, середовища, з якими працює код, та рекомендації, яким набором правил слідувати.
+
+npm i -D webpack-bundle-analyzer
+npm run analyze
