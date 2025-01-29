@@ -22,6 +22,8 @@ DEV-сервер:
 npm install -D webpack-dev-server 
 npm start 
 
+npm run build:dev:start
+
 npm install --save-dev css-loader
 
 npm install --save-dev style-loader
